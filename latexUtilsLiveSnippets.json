@@ -1,0 +1,1668 @@
+[
+    {
+        "prefix": "\\bteh$",
+        "body": "the",
+        "mode": "text",
+        "description": "the",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\btaht$",
+        "body": "that",
+        "mode": "text",
+        "description": "that",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\b([a-zA-Z0-9])lm $",
+        "body": "\\($1\\)",
+        "mode": "text",
+        "description": "single letter in text",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\benc$",
+        "body": "\\mathsf{Enc}_k($$1)",
+        "mode": "maths",
+        "description": "enc",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbegg$",
+        "body": "\\begin{$$1}{$$2}{$$2}\n\t$$0\n\\end{$$1}",
+        "mode": "text",
+        "description": "bal",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbth$",
+        "body": "\\begin{theorem}[$$1]\n\t$$0\n\\end{theorem}",
+        "mode": "text",
+        "description": "bal",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbde$",
+        "body": "\\begin{definition*}[$$1]\n\t$$2\n\\end{definition*}",
+        "mode": "text",
+        "description": "bal",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbfi$",
+        "body": "\\begin{figure}[htbp]\n\t\\centering\n\t\\includegraphics[width=0.5\\textwidth]{figure/$$1}\n\t\\caption{$$2}\n\t\\label{Figure:}\n\\end{figure}",
+        "mode": "text",
+        "description": "bfi",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbpy$",
+        "body": "\\begin{property*}\n\t$$1\n\\end{property*}",
+        "mode": "text",
+        "description": "bal",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbso$",
+        "body": "\\begin{solution}\n\t$$1\n\\end{solution}",
+        "mode": "text",
+        "description": "bal",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbpr$",
+        "body": "\\begin{proof}\n\t$$0\n\\end{proof}",
+        "mode": "text",
+        "description": "bal",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbex$",
+        "body": "\\begin{example}[$$1]\n\t$$2\n\\end{example}",
+        "mode": "text",
+        "description": "bex",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbga$",
+        "body": "\\begin{gather*}\n\t$$1\n\\end{gather*}",
+        "mode": "maths",
+        "description": "bal",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbal$",
+        "body": "\\begin{aligned}\n\t$$1\n\\end{aligned}",
+        "mode": "maths",
+        "description": "bal",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bii$",
+        "body": "\\($$1\\)",
+        "mode": "text",
+        "description": "ii",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bdd$",
+        "body": "\\[\n\t$$0\n\\]",
+        "mode": "text",
+        "description": "dd",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "([A-Za-z}\\)\\]])(\\d)$",
+        "body": "$1_$2",
+        "mode": "maths",
+        "triggerWhenComplete": true,
+        "description": "auto subscript"
+    },
+    {
+        "prefix": "([A-Za-z}\\)\\]]) ?_(\\d\\d)$",
+        "body": "$1_{$2}",
+        "mode": "maths",
+        "triggerWhenComplete": true,
+        "description": "auto escape subscript"
+    },
+    {
+        "prefix": "(^|[^\\\\])(?<!_)([A-Za-z}\\)\\]])_([rijklmn])([rijklmn])$",
+        "body": "$1$2_{$3$4}",
+        "mode": "maths",
+        "priority": -1,
+        "triggerWhenComplete": true,
+        "description": "auto subscript for rstijklmn"
+    },
+    {
+        "prefix": "(\\S) ([\\^_])$",
+        "body": "$1$2",
+        "mode": "maths",
+        "triggerWhenComplete": true,
+        "description": "remove extraneous sub/superscript space",
+        "priority": 2
+    },
+    {
+        "prefix": "([A-Za-z}\\)\\]]) ?\\^ ?(\\d\\d|[\\+\\-] ?(?:\\d|[A-Za-z]|\\\\\\w+))$",
+        "body": "$1^{$2}",
+        "mode": "maths",
+        "triggerWhenComplete": true,
+        "description": "auto escape superscript",
+        "priority": 2
+    },
+    {
+        "prefix": "([^ &\\\\\\+\\-=<>\\|!~@])([\\+\\-=<>])$",
+        "body": "$1 $2",
+        "mode": "maths",
+        "priority": -1,
+        "description": "whitespace before operators",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "([\\+\\-=<>])([^ &\\\\\\+\\-=<>\\|!~])$",
+        "body": "$1 $2",
+        "mode": "maths",
+        "priority": -1,
+        "description": "whitespace after operators",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\.\\.\\.$",
+        "body": "\\dots ",
+        "mode": "maths",
+        "description": "⋯",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "=>$",
+        "body": "\\implies ",
+        "mode": "maths",
+        "description": "⇒",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "=<$",
+        "body": "\\impliedby ",
+        "mode": "maths",
+        "description": "implied by",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(([\\d\\.]+)|([\\d\\.]*)(\\\\)?([A-Za-z]+)((\\^|_)(\\{\\d+\\}|\\d|[A-Za-z]|\\\\\\w+))*!?)\\/$",
+        "body": "\\frac{$1}{$$1}$$0",
+        "mode": "maths",
+        "description": "fraction (from regex)",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bfr$",
+        "body": "$1\\frac{$$1}{$$2} ",
+        "mode": "maths",
+        "description": "fraction (empty)",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "([\\)\\]}]) ?/$",
+        "body": "SPECIAL_ACTION_FRACTION",
+        "mode": "maths",
+        "description": "fraction (parsed)",
+        "triggerWhenComplete": true,
+        "noPlaceholders": false
+    },
+    {
+        "prefix": "sympy$",
+        "body": "sympy $$1 sympy",
+        "mode": "maths",
+        "description": "sympy block",
+        "triggerWhenComplete": false
+    },
+    {
+        "prefix": "sympy.+$",
+        "body": "SPECIAL_ACTION_BREAK",
+        "mode": "maths",
+        "triggerWhenComplete": true,
+        "priority": 2
+    },
+    {
+        "prefix": "sympy ?(.+?) ?sympy ?$",
+        "body": "SPECIAL_ACTION_SYMPY",
+        "mode": "maths",
+        "priority": 3,
+        "description": "sympy",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bieq$",
+        "body": "$1\\equiv ",
+        "mode": "maths",
+        "description": "==",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\biff$",
+        "body": "$1\\iff ",
+        "mode": "maths",
+        "description": "⇔",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\binn$",
+        "body": "$1\\in ",
+        "mode": "maths",
+        "description": "in",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bnotin$",
+        "body": "$1\\not\\in ",
+        "mode": "maths",
+        "description": "∈",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?!=$",
+        "body": " \\neq ",
+        "mode": "maths",
+        "description": "neq",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "==$",
+        "body": "&= ",
+        "mode": "maths",
+        "description": "aligned equal",
+        "priority": 1,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?~=$",
+        "body": " \\approx ",
+        "mode": "maths",
+        "description": "≈",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?~~$",
+        "body": " \\sim ",
+        "mode": "maths",
+        "description": "~",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?>=$",
+        "body": " \\geq ",
+        "mode": "maths",
+        "description": "≥",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?<=$",
+        "body": " \\leq ",
+        "mode": "maths",
+        "description": "≤",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?>>$",
+        "body": " \\gg ",
+        "mode": "maths",
+        "description": "≫",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?<<$",
+        "body": " \\ll ",
+        "mode": "maths",
+        "description": "≪",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?xx$",
+        "body": " \\times ",
+        "mode": "maths",
+        "description": "×",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])cp$",
+        "body": "$1\\cp ",
+        "mode": "maths",
+        "description": "cross",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bvd$",
+        "body": "\\vdot",
+        "mode": "maths",
+        "description": "⋅",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bcd$",
+        "body": "\\cdot",
+        "mode": "maths",
+        "description": "⋅",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\]\\b|[ ,\\)\\]\\}]\\w*)(get)$",
+        "body": "$1\\gets ",
+        "mode": "maths",
+        "description": "→inv",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\]\\b|[ ,\\)\\]\\}]\\w*)(to|->)$",
+        "body": "$1\\to ",
+        "mode": "maths",
+        "description": "→",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\]\\b|[ ,\\)\\]\\}]\\w*)(<>)$",
+        "body": "$1\\longleftrightarrow ",
+        "mode": "maths",
+        "description": "→",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\blra$",
+        "body": "$1\\longrightarrow ",
+        "mode": "maths",
+        "description": "→",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bllra$",
+        "body": "$1\\longleftrightarrow ",
+        "mode": "maths",
+        "description": "→",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\blla$",
+        "body": "$1\\longleftarrow ",
+        "mode": "maths",
+        "description": "→",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?(?:\\|->|!>)$",
+        "body": " \\mapsto ",
+        "mode": "maths",
+        "description": "↦",
+        "priority": 1.1,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])a(?:rc)?(sin|cos|tan|cot|csc|sec)$",
+        "body": "$1\\arc$2 ",
+        "mode": "maths",
+        "description": "arc(trig)",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])(sin|cos|tan|cot|csc|sec|min|max|log|exp)$",
+        "body": "$1\\$2 ",
+        "mode": "maths",
+        "description": "un-backslashed operator",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])(pi)$",
+        "body": "$1\\$2",
+        "mode": "maths",
+        "description": "pi",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "((?:\\b|\\\\)\\w{1,7})(,\\.|\\.,)$",
+        "body": "\\vec{$1}",
+        "mode": "maths",
+        "description": "vector",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\btd$",
+        "body": "\\tilde{$$1}",
+        "mode": "maths",
+        "description": "tilde",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(\\\\?[\\w{}\\^]{1,9})td $",
+        "body": "\\tilde{$1}",
+        "mode": "maths",
+        "description": "tilde",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(\\\\?[\\w\\^]{1,7})\\. $",
+        "body": "\\dot{$1}",
+        "mode": "maths",
+        "description": "dot",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bdot$",
+        "body": "\\dot{$$1}",
+        "mode": "maths",
+        "description": "dot",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(\\\\?[\\w\\^]{1,7})\\.\\. $",
+        "body": "\\ddot{$1}",
+        "mode": "maths",
+        "description": "ddot",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\brt$",
+        "body": "$1(\\vb{r},t)",
+        "mode": "maths",
+        "description": "hbar",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bihbar$",
+        "body": "$1\\I\\hbar ",
+        "mode": "maths",
+        "description": "hbar",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bhbar$",
+        "body": "$1\\hbar ",
+        "mode": "maths",
+        "description": "hbar",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbar$",
+        "body": "\\overline{$$1}",
+        "mode": "maths",
+        "description": "overline",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\b(\\\\?[\\w\\^{}]{1,3})bar$",
+        "body": "\\overline{$1}",
+        "mode": "maths",
+        "description": "overline",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\b(x|y|z|A|B|C|P|H|L|U|G|F|K|V|X|Y|Z|R)h$",
+        "body": "$1\\hat{$2}",
+        "mode": "maths",
+        "description": "r,p-hat",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\b(x|y|z|A|B|C|P|H|L)t$",
+        "body": "$1\\tilde{$2}",
+        "mode": "maths",
+        "description": "r,p-tilde",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\b(r|p)h$",
+        "body": "$1\\hat{\\vb{$2}}",
+        "mode": "maths",
+        "description": "r,p-hat",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\b(v|p)(i|j|k|x|y|z)t$",
+        "body": "$1\\tilde{$2}_{$3}",
+        "mode": "maths",
+        "description": "v,p-tilde",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\b(r|p)(i|j|k|x|y|z)h$",
+        "body": "$1\\hat{$2}_{$3}",
+        "mode": "maths",
+        "description": "r,p-hat",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bhat$",
+        "body": "$1\\hat{$$1}",
+        "mode": "maths",
+        "description": "hat",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\\\\\)(\\w)$",
+        "body": "\\) $1",
+        "mode": "any",
+        "description": "space after inline maths",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\\\\\\\\\\\$",
+        "body": "\\setminus ",
+        "mode": "maths",
+        "description": "∖ (setminus)",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bpmat$",
+        "body": "\\pmat{$$1}",
+        "mode": "maths",
+        "description": "pauli matrix",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bpdv$",
+        "body": "$1\\pdv[$$1]{$$2}{$$3}",
+        "mode": "maths",
+        "description": "partial derivative",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bdv$",
+        "body": "$1\\dv[$$1]{$$2}{$$3}",
+        "mode": "maths",
+        "description": "derivative",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bdd$",
+        "body": "$1\\dd ",
+        "mode": "maths",
+        "description": "partial derivative",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bsq$",
+        "body": "$1\\sqrt{$$1}",
+        "mode": "maths",
+        "description": "√",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?sr$",
+        "body": "^2 ",
+        "mode": "maths",
+        "description": "²",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?cb$",
+        "body": "^3 ",
+        "mode": "maths",
+        "description": "³",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?inv$",
+        "body": "^{-1}",
+        "mode": "maths",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?ani$",
+        "body": "^{0}",
+        "mode": "maths",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?trp$",
+        "body": "^{t}",
+        "mode": "maths",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bee$",
+        "body": "\\exists ",
+        "mode": "maths",
+        "description": "∃",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\baa$",
+        "body": "\\forall ",
+        "mode": "maths",
+        "description": "∀",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\b([A-Za-z])([A-Za-z])\\2$",
+        "body": "$1_{$2}",
+        "mode": "maths",
+        "description": "subscript letter",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\b([A-Za-z])([A-Za-z])p(\\d)$",
+        "body": "$1_{$2+$3}",
+        "mode": "maths",
+        "description": "subscript letter + 1",
+        "priority": 2,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\b([A-Za-z])_([rijklmn])p(\\d)$",
+        "body": "$1_{$2+$3}",
+        "mode": "maths",
+        "description": "subscript letter + 1",
+        "priority": 2,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "([^ \\\\])  $",
+        "body": "$1\\, ",
+        "mode": "maths",
+        "description": "add maths whitespace \\,",
+        "priority": -1,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "([^ \\\\])\\\\, {2,4}$",
+        "body": "$1\\: ",
+        "mode": "maths",
+        "description": "add maths whitespace \\:",
+        "priority": 0.1,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "([^ \\\\])\\\\: {2,4}$",
+        "body": "$1\\; ",
+        "mode": "maths",
+        "description": "add maths whitespace \\;",
+        "priority": 0.2,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "([^ \\\\])\\\\; {2,4}$",
+        "body": "$1\\ ",
+        "mode": "maths",
+        "description": "add maths whitespace \\ ",
+        "priority": 0.3,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "([^ \\\\])\\\\ {2,4}$",
+        "body": "$1\\quad ",
+        "mode": "maths",
+        "description": "add maths whitespace quad",
+        "priority": 0.4,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "([^ \\\\])\\\\quad {2,4}$",
+        "body": "$1\\qquad ",
+        "mode": "maths",
+        "description": "add maths whitespace qquad",
+        "priority": 0.5,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bset$",
+        "body": "\\\\{$$1\\\\} ",
+        "mode": "maths",
+        "description": "set {}",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?\\|\\|$",
+        "body": " \\mid ",
+        "mode": "maths",
+        "description": "|",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "< ?>$",
+        "body": "\\diamond ",
+        "mode": "maths",
+        "description": "⋄",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bfam$",
+        "body": "\\begin{framed}\n\t$$1\n\\end{framed}",
+        "mode": "maths",
+        "description": "framed",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbox$",
+        "body": "\\boxed{\n\t$$1\n}",
+        "mode": "maths",
+        "description": "boxed",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bdcase$",
+        "body": "\\begin{dcases}\n\t$$1\n\\end{dcases} ",
+        "mode": "maths",
+        "description": "cases",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bcase$",
+        "body": "\\begin{cases}\n\t$$1\n\\end{cases} ",
+        "mode": "maths",
+        "description": "cases",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bst$",
+        "body": "$1\\ \\text{s.t.}\\ ",
+        "mode": "maths",
+        "description": "such that",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\+ ?-$",
+        "body": "\\pm ",
+        "mode": "maths",
+        "description": "±",
+        "priority": 1,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "- ?\\+$",
+        "body": "\\mp ",
+        "mode": "maths",
+        "description": "∓",
+        "priority": 1,
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(?:([A-Za-z0-9]|\\\\\\w{,7})|\\(([^\\)]+)\\))C(?:([A-Za-z0-9]|\\\\\\w{,7})|\\(([^\\)]+)\\))$",
+        "body": "\\binom{$1$2}{$3$4}",
+        "mode": "maths",
+        "priority": 2,
+        "description": "binomial",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\brhs$",
+        "body": "$1\\mathrm{R.H.S}\\,",
+        "mode": "maths",
+        "description": "rhs",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\blhs$",
+        "body": "$1\\mathrm{L.H.S}\\,",
+        "mode": "maths",
+        "description": "lhs",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bspan$",
+        "body": "$1\\mathrm{span}($$1)",
+        "mode": "maths",
+        "description": "span",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bcap$",
+        "body": "$1\\cap ",
+        "mode": "maths",
+        "description": "insertion set",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bcup$",
+        "body": "$1\\cup ",
+        "mode": "maths",
+        "description": "add set",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bdim$",
+        "body": "$1\\dim($$1)",
+        "mode": "maths",
+        "description": "dim",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bsub$",
+        "body": "$1\\subseteq ",
+        "mode": "maths",
+        "description": "subset",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bsup$",
+        "body": "$1\\supseteq ",
+        "mode": "maths",
+        "description": "supset",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\b=>$",
+        "body": "$1\\(\\implies\\)",
+        "mode": "text",
+        "description": "implies",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\btit$",
+        "body": "$1\\textit{$$1}",
+        "mode": "any",
+        "description": "tit",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\btet$",
+        "body": "$1\\text{$$1}",
+        "mode": "any",
+        "description": "te",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\btb$",
+        "body": "$1\\textbf{$$1}",
+        "mode": "any",
+        "description": "tbf",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bvb$",
+        "body": "$1\\vb{$$1}",
+        "mode": "maths",
+        "description": "vector",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bivb$",
+        "body": "$1\\vb*{$$1}",
+        "mode": "maths",
+        "description": "vector",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bvu$",
+        "body": "$1\\vu{$$1}",
+        "mode": "maths",
+        "description": "vector",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bivu$",
+        "body": "$1\\vu*{$$1}",
+        "mode": "maths",
+        "description": "vector",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bcal$",
+        "body": "$1\\mathcal{$$1}",
+        "mode": "maths",
+        "description": "cal",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bscr$",
+        "body": "\\mathscr{$$1}",
+        "mode": "maths",
+        "description": "src",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bmsf$",
+        "body": "\\mathsf{$$1}",
+        "mode": "maths",
+        "description": "sf",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bmbb$",
+        "body": "\\mathbb{$$1}",
+        "mode": "maths",
+        "description": "mbb",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bmrm$",
+        "body": "\\mathrm{$$1}",
+        "mode": "maths",
+        "description": "mrm",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bcom$",
+        "body": "$1\\comm{$$1}{$$2}",
+        "mode": "maths",
+        "description": "commutative",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bip$",
+        "body": "$1\\iprod{$$1}{$$2}",
+        "mode": "maths",
+        "description": "inner product",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bq(if|or|then|else|otherwise|unless|given|using|assume|since|let|for|all|even|odd|integer|and|as|in|cc|comma)$",
+        "body": "\\q$1",
+        "mode": "maths",
+        "description": "Const",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bqq$",
+        "body": "\\qq{}",
+        "mode": "maths",
+        "description": "qq",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bcst$",
+        "body": "\\text{Const.}",
+        "mode": "maths",
+        "description": "Const",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?(m)?qB$",
+        "body": "\\$1qty{$$1}",
+        "mode": "maths",
+        "description": "qty",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?(m)?qb$",
+        "body": "\\$1qty($$1)",
+        "mode": "maths",
+        "description": "qty",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\b(m)?q\\[\\]$",
+        "body": "\\$1qty[$$1]",
+        "mode": "maths",
+        "description": "qty",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bxma\\*$",
+        "body": "$1\\xmat*{$$1}{$$2}{$$3}",
+        "mode": "maths",
+        "description": "mat",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bxmat$",
+        "body": "$1\\xmat{$$1}{$$2}{$$3}",
+        "mode": "maths",
+        "description": "mat",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bzmat$",
+        "body": "$1\\xmat{$$1}{$$2}",
+        "mode": "maths",
+        "description": "mat",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\b(i|p)mat$",
+        "body": "$1\\$2mat{$$1}",
+        "mode": "maths",
+        "description": "mat",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\b(d|ad)mat$",
+        "body": "$1\\$2mat[$${1:0}]{$${2:1}}",
+        "mode": "maths",
+        "description": "mat",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\babs$",
+        "body": "$1\\abs{$$1}",
+        "mode": "maths",
+        "description": "abs",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\babr$",
+        "body": "$1\\abs{$$1}^2 ",
+        "mode": "maths",
+        "description": "abs",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bnorm$",
+        "body": "$1\\norm{$$1}",
+        "mode": "maths",
+        "description": "norm",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\*\\*$",
+        "body": "^* ",
+        "mode": "maths",
+        "description": "star",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bperp$",
+        "body": "$1^\\perp ",
+        "mode": "maths",
+        "description": "perpendicular",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?htp$",
+        "body": "^\\dagger ",
+        "mode": "maths",
+        "description": "transpose",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": " ?tp$",
+        "body": "^\\top ",
+        "mode": "maths",
+        "description": "transpose",
+        "triggerWhenComplete": true
+    },{
+        "prefix": "\\bbcup$",
+        "body": "\\bigcup\\limits_{$$1}^{$$2}",
+        "mode": "maths",
+        "description": "cup",
+        "triggerWhenComplete": true
+    },{
+        "prefix": "\\bbcap$",
+        "body": "\\bigcap\\limits_{$$1}^{$$2}",
+        "mode": "maths",
+        "description": "cap",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bprod$",
+        "body": "$1\\prod\\limits_{$$1}^{$$2}",
+        "mode": "maths",
+        "description": "prod",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bsum$",
+        "body": "$1\\sum\\limits_{$${1:n = 0}}^{$${2:\\infty}}",
+        "mode": "maths",
+        "description": "sum",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\blim$",
+        "body": "$1\\lim\\limits_{$$1}",
+        "mode": "maths",
+        "description": "limit",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbb_1$",
+        "body": "\\mathbbm{1}",
+        "mode": "maths",
+        "description": "bb1",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbbh$",
+        "body": "\\mathbb{H}",
+        "mode": "maths",
+        "description": "bbh",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbbr$",
+        "body": "\\mathbb{R}",
+        "mode": "maths",
+        "description": "bbr",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbbq$",
+        "body": "\\mathbb{Q}",
+        "mode": "maths",
+        "description": "bbq",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbbc$",
+        "body": "\\mathbb{C}",
+        "mode": "maths",
+        "description": "bbc",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bve$",
+        "body": "\\mathscr{E}",
+        "mode": "maths",
+        "description": "vector space E",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bvf$",
+        "body": "\\mathscr{F}",
+        "mode": "maths",
+        "description": "vector space F",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bemp$",
+        "body": "\\varnothing ",
+        "mode": "maths",
+        "description": "empty set",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\boo$",
+        "body": "\\infty ",
+        "mode": "maths",
+        "description": "infity",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(cdot)d$",
+        "body": "$1s ",
+        "mode": "maths",
+        "description": "cdots",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\balp$",
+        "body": "$1\\alpha",
+        "mode": "maths",
+        "description": "alpha",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bAlp$",
+        "body": "$1\\Alpha",
+        "mode": "maths",
+        "description": "Alpha",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\biota$",
+        "body": "$1\\iota",
+        "mode": "maths",
+        "description": "iota",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bbeta$",
+        "body": "$1\\beta",
+        "mode": "maths",
+        "description": "beta",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bbeta$",
+        "body": "\\(\\beta\\)",
+        "mode": "text",
+        "description": "beta",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bgam$",
+        "body": "$1\\gamma",
+        "mode": "maths",
+        "description": "gamma",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bgamma$",
+        "body": "\\(\\gamma\\)",
+        "mode": "text",
+        "description": "gamma",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bGam$",
+        "body": "$1\\Gamma",
+        "mode": "maths",
+        "description": "Gamma",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\brho$",
+        "body": "$1\\rho ",
+        "mode": "maths",
+        "description": "rho",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bxi$",
+        "body": "$1\\xi",
+        "mode": "maths",
+        "description": "xi",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bchi$",
+        "body": "$1\\chi",
+        "mode": "maths",
+        "description": "chi",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bsig$",
+        "body": "$1\\sigma",
+        "mode": "maths",
+        "description": "sigma",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bSig$",
+        "body": "$1\\Sigma",
+        "mode": "maths",
+        "description": "Sigma",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\blam$",
+        "body": "$1\\lambda",
+        "mode": "maths",
+        "description": "lambda",
+        "triggerWhenComplete": true
+    },{
+        "prefix": "\\blam$",
+        "body": "\\(\\lambda\\)",
+        "mode": "text",
+        "description": "lambda",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\beta$",
+        "body": "$1\\eta",
+        "mode": "maths",
+        "description": "eta",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bdel$",
+        "body": "$1\\delta",
+        "mode": "maths",
+        "description": "delta",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bDel$",
+        "body": "$1\\Delta",
+        "mode": "maths",
+        "description": "Delta",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bvhi$",
+        "body": "$1\\varphi",
+        "mode": "maths",
+        "description": "phi",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bphi$",
+        "body": "$1\\phi",
+        "mode": "maths",
+        "description": "phi",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bpsi$",
+        "body": "$1\\psi",
+        "mode": "maths",
+        "description": "psi",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bPhi$",
+        "body": "$1\\Phi",
+        "mode": "maths",
+        "description": "Phi",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bome$",
+        "body": "$1\\omega",
+        "mode": "maths",
+        "description": "omega",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bvps$",
+        "body": "$1\\varepsilon",
+        "mode": "maths",
+        "description": "varepsilon",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\beps$",
+        "body": "$1\\epsilon",
+        "mode": "maths",
+        "description": "epsilon",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bthe$",
+        "body": "$1\\theta",
+        "mode": "maths",
+        "description": "theta",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bnu$",
+        "body": "$1\\nu",
+        "mode": "maths",
+        "description": "nu",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bmu$",
+        "body": "$1\\mu",
+        "mode": "maths",
+        "description": "mu",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\blint$",
+        "body": "$1\\int\\limits_{$$1} $$2 \\dd{$$3}",
+        "mode": "maths",
+        "description": "lint",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bliint$",
+        "body": "$1\\iint\\limits_{$$1} $$2 \\dd{$$3}",
+        "mode": "maths",
+        "description": "liint",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\b3int$",
+        "body": "$1\\int \\dd[3]{$${1:r}}",
+        "mode": "maths",
+        "description": "int",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bint$",
+        "body": "$1\\int_{$${1:-\\infty}}^{$${2:\\infty}}$$3 \\dd{$${4:x}}",
+        "mode": "maths",
+        "description": "int",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\biint$",
+        "body": "$1\\iint_{$${1:-\\infty}}^{$${2:\\infty}}$$3 \\dd{$${4:x}}",
+        "mode": "maths",
+        "description": "iint",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bgrad$",
+        "body": "$1\\grad",
+        "mode": "maths",
+        "description": "gradient",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bcurl$",
+        "body": "$1\\curl",
+        "mode": "maths",
+        "description": "curl",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bdiv$",
+        "body": "$1\\div",
+        "mode": "maths",
+        "description": "divergence",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\blap$",
+        "body": "$1\\laplacian",
+        "mode": "maths",
+        "description": "laplacianS",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bep-$",
+        "body": "$1\\E^{-\\frac{\\I}{\\hbar}\\vb{p}\\vdot\\vb{$${3:r}}}",
+        "mode": "maths",
+        "description": "exp",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bepr$",
+        "body": "$1\\E^{\\frac{\\I}{\\hbar}\\vb{p}\\vdot\\vb{$${3:r}}}",
+        "mode": "maths",
+        "description": "exp",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bnul$",
+        "body": "$1\\mathrm{nullity}($$1)",
+        "mode": "maths",
+        "description": "nullity",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\btr$",
+        "body": "$1\\Tr $$1",
+        "mode": "maths",
+        "description": "tr",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])ket$",
+        "body": "$1\\ket{$$1}",
+        "mode": "maths",
+        "description": "ket",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])bra$",
+        "body": "$1\\bra{$$1}",
+        "mode": "maths",
+        "description": "bra",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bkb$",
+        "body": "$1\\op{$$1}{$$2}",
+        "mode": "maths",
+        "description": "dyad",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bbk$",
+        "body": "$1\\ip{$$1}{$$2}",
+        "mode": "maths",
+        "description": "dyad",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bev$",
+        "body": "$1\\ev{$$1}{$$2}",
+        "mode": "maths",
+        "description": "dyad",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bmel$",
+        "body": "$1\\mel{$$1}{$$2}{$$3}",
+        "mode": "maths",
+        "description": "dyad",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bift$",
+        "body": "$1\\ftinv{$$1}",
+        "mode": "maths",
+        "description": "ftinv",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bft$",
+        "body": "$1\\ft{$$1}",
+        "mode": "maths",
+        "description": "ft",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bran$",
+        "body": "$1\\rank($$1)",
+        "mode": "maths",
+        "description": "rank",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bdet$",
+        "body": "$1\\det($$1)",
+        "mode": "maths",
+        "description": "det",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bdep$",
+        "body": "\\mathrm{det}\\begin{pmatrix}$$1\n\\end{pmatrix}",
+        "mode": "maths",
+        "description": "det",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\beqv$",
+        "body": "\\iff ",
+        "mode": "maths",
+        "description": "eqv",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\beqv$",
+        "body": "\\(\\iff\\)",
+        "mode": "text",
+        "description": "eqv",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\boto$",
+        "body": "one-to-one",
+        "mode": "text",
+        "description": "oto",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\barr$",
+        "body": "$$1_1,$$1_2,\\cdots,$$1_n ",
+        "mode": "maths",
+        "description": "arr",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\b12n$",
+        "body": "1,2,\\cdots,n ",
+        "mode": "maths",
+        "description": "12n",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bot$",
+        "body": "$1\\otimes ",
+        "mode": "maths",
+        "description": "ox",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])\\bop$",
+        "body": "$1\\oplus ",
+        "mode": "maths",
+        "description": "o+",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bmre$",
+        "body": "[$$1]_{$${2:\\beta}}^{ $$3}",
+        "mode": "maths",
+        "description": "beta",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bvsp$",
+        "body": "vector space",
+        "mode": "text",
+        "description": "vs",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bfdim$",
+        "body": "finite-dimensional ",
+        "mode": "text",
+        "description": "fdim",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bwlg$",
+        "body": "without loss of generality",
+        "mode": "text",
+        "description": "wlg",
+        "triggerwhencomplete": true
+    },
+    {
+        "prefix": "\\bliind$",
+        "body": "linearly independent",
+        "mode": "text",
+        "description": "vs",
+        "triggerwhencomplete": true
+    },
+    {
+        "prefix": "\\bobasis$",
+        "body": "ordered basis",
+        "mode": "text",
+        "description": "ordered basis",
+        "triggerwhencomplete": true
+    },
+    {
+        "prefix": "\\bobases$",
+        "body": "ordered bases",
+        "mode": "text",
+        "description": "ordered bases",
+        "triggerwhencomplete": true
+    },
+    {
+        "prefix": "\\blitr$",
+        "body": "linear transformation",
+        "mode": "text",
+        "description": "vs",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bcsco$",
+        "body": "C.S.C.O.",
+        "mode": "text",
+        "description": "iso",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\biso$",
+        "body": "isomorphi",
+        "mode": "text",
+        "description": "iso",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\blsp$",
+        "body": "\\mathcal{L}($${1:\\mathsf{V}},$${2:\\mathsf{W}})",
+        "mode": "maths",
+        "description": "lsp",
+        "triggerWhenComplete": true
+    },
+    {
+        "prefix": "\\bmsp$",
+        "body": "\\mathsf{M}_{$${1:m\\times n}}($${2:\\mathsf{F}})",
+        "mode": "maths",
+        "description": "lsp",
+        "triggerWhenComplete": true
+    }
+]

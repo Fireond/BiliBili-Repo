@@ -1,0 +1,384 @@
+{
+    "workbench.colorTheme": "One Monokai",
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.preserveFocus": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "explorer.confirmDelete": false,
+    "editor.fontSize": 22,
+    "editor.lineNumbers": "relative",
+    "files.autoSave": "onFocusChange",
+    "editor.tabCompletion": "on",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "emmet.triggerExpansionOnTab": true,
+    "terminal.integrated.fontSize": 19,
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.wordWrap": "on",
+    "pasteImage.insertPattern": "\\begin{figure}[htbp]\n\t\\centering\n\t\\includegraphics[width=0.5\\textwidth]{figure/${imageSyntaxSuffix}${imageFileName}}\n\t\\caption{}\n\t\\label{Figure:}\n\\end{figure}",
+    "pasteImage.path": "${projectRoot}/figure",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.view.pdf.viewer": "tab",  
+    "latex-workshop.view.pdf.external.viewer.command": "C:/Users/1/AppData/Local/SumatraPDF/SumatraPDF.exe",  //请修改为自己的安装位置
+    "latex-workshop.view.pdf.external.viewer.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "-reuse-instance",
+        "-inverse-search",
+        "code.cmd -r -g \"%f\":%l",
+        "%PDF%"
+    ],
+    "latex-workshop.view.pdf.external.synctex.command": "C:/Users/1/AppData/Local/SumatraPDF/SumatraPDF.exe", //请修改为自己的安装位置
+    "latex-workshop.latex.autoClean.run": "onFailed", 
+    "latex-workshop.latex.clean.fileTypes": [
+      "*.aux",
+      "*.bbl",
+      "*.blg",
+      "*.idx",
+      "*.ind",
+      "*.lof",
+      "*.lot",
+      "*.out",
+      "*.toc",
+      "*.acn",
+      "*.acr",
+      "*.alg",
+      "*.glg",
+      "*.glo",
+      "*.gls",
+      "*.ist",
+      "*.fls",
+      "*.log",
+      "*.fdb_latexmk"
+    ],
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "-reuse-instance",
+        "-inverse-search",
+        "code.cmd -r -g \"%f\":%l",
+        "%PDF%"
+],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xe->bib->xe->xe",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdf->bib->pdf->pdf",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "tabnine.experimentalAutoImports": true,
+    "c-cpp-compile-run.c-compiler": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+    "c-cpp-compile-run.cpp-compiler": "C:\\msys64\\mingw64\\bin\\g++",
+    "c-cpp-compile-run.run-in-external-terminal": true,
+    "C_Cpp.default.cppStandard": "c++17",
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "javascript": "node",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "php": "php",
+        "python": "python -u",
+        "perl": "perl",
+        "perl6": "perl6",
+        "ruby": "ruby",
+        "go": "go run",
+        "lua": "lua",
+        "groovy": "groovy",
+        "powershell": "powershell -ExecutionPolicy ByPass -File",
+        "bat": "cmd /c",
+        "shellscript": "bash",
+        "fsharp": "fsi",
+        "csharp": "scriptcs",
+        "vbscript": "cscript //Nologo",
+        "typescript": "ts-node",
+        "coffeescript": "coffee",
+        "scala": "scala",
+        "swift": "swift",
+        "julia": "julia",
+        "crystal": "crystal",
+        "ocaml": "ocaml",
+        "r": "Rscript",
+        "applescript": "osascript",
+        "clojure": "lein exec",
+        "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+        "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+        "racket": "racket",
+        "scheme": "csi -script",
+        "ahk": "autohotkey",
+        "autoit": "autoit3",
+        "dart": "dart",
+        "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+        "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+        "haskell": "runhaskell",
+        "nim": "nim compile --verbosity:0 --hints:off --run",
+        "lisp": "sbcl --script",
+        "kit": "kitc --run",
+        "v": "v run",
+        "sass": "sass --style expanded",
+        "scss": "scss --style expanded",
+        "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+        "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "sml": "cd $dir && sml $fileName"
+    },
+    "editor.formatOnSave": false,
+    "python.defaultInterpreterPath": "C:\\Users\\1\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "files.autoSaveDelay": 0,
+    "vim.timeout": 300,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.sneak": true,
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": ["$"]
+        },
+        {
+            "before": ["H"],
+            "after": ["^"]
+        }
+    ],
+    "vim.operatorPendingModeKeyBindings": [
+        {
+            "before": ["L"],
+            "after": ["$"]
+        },
+        {
+            "before": ["H"],
+            "after": ["^"]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "f",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "tab"
+            ],
+            "after": [
+                "~"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "lineBreakInsert"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "T"
+            ],
+            "commands": [
+                "workbench.action.focusSecondEditorGroup"
+            ],
+        },
+        {
+            "before": [
+                "t"
+            ],
+            "commands": [
+                "workbench.action.focusThirdEditorGroup"
+            ],
+        },{
+            "before": [
+                "s",
+                "s"
+            ],
+            "commands": [
+                "latex-workshop.select-envcontent"
+            ],
+        },
+        {
+            "before": [
+                "s",
+                "p"
+            ],
+            "commands" :[
+                "cSpell.addWordToUserDictionary"
+            ],
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-b>": false,
+        "<C-w>": false,
+        "<C-x>": false,
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "explorer.confirmDragAndDrop": false,
+    "cSpell.userWords": [
+        "backpropagated",
+        "Codebook",
+        "diagoalizable",
+        "Diagonalizability",
+        "diagonalizable"
+    ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+            "name": "custom-dictionary-user",
+            "path": "~/.cspell/custom-dictionary-user.txt",
+            "addWords": true,
+            "scope": "user"
+        }
+    },
+    "prettier.useTabs": true,
+    "editor.unicodeHighlight.allowedCharacters": {
+        "�": true
+    },
+    "cmake.configureOnOpen": true,
+    "latex-utilities.liveReformat.enabled": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "outline-map.enableAutomaticIndentReduction": true,
+    "latex-utilities.formattedPaste.image.template": [
+        "\\begin{figure}[!htb]",
+        "\t\\centering",
+        "\t\\includegraphics[$1]{${imageFilePath}}",
+        "\t\\caption{${imageFileNameWithoutExt/[-]/ /}}",
+        "\t\\label{fig:${imageFileNameWithoutExt}}",
+        "\\end{figure}",
+        ""
+    ],
+    "editor.accessibilitySupport": "off",
+    "latex-utilities.formattedPaste.useAsDefault": true,
+    "search.followSymlinks": false,
+    "latex-utilities.message.update.show": false
+}
