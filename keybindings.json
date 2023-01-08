@@ -4,12 +4,12 @@
     "key": "shift+j",
     "command": "selectNextSuggestion",
     "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
+  },// 使用 shift+j 来选择下一个可选项（相当于方向键下）
   {
     "key": "shift+k",
     "command": "selectPrevSuggestion",
     "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
+  },// 使用 shift+k 来选择上一个可选项（相当于方向键上）
   {
     "key": "ctrl+e",
     "command": "editor.action.insertSnippet",
@@ -17,23 +17,7 @@
     "args": {
       "snippet": "\\begin{enumerate}[$1]\n\t\\item $2\n\\end{enumerate}\n"
     }
-  },
-  {
-    "key": "ctrl+[",
-    "command": "editor.action.insertSnippet",
-    "when": "editorTextFocus",
-    "args": {
-      "snippet": "\\left[$1\\right]$0"
-    }
-  },
-  {
-    "key": "ctrl+9",
-    "command": "editor.action.insertSnippet",
-    "when": "editorTextFocus",
-    "args": {
-      "snippet": "\\left($1\\right)$0"
-    }
-  },
+  },// snip：latex有序列表
   {
     "key": "ctrl+i",
     "command": "editor.action.insertSnippet",
@@ -41,7 +25,7 @@
     "args": {
       "snippet": "_{$1}$0"
     }
-  },
+  },// snip：latex下标
   {
     "key": "ctrl+h",
     "command": "editor.action.insertSnippet",
@@ -49,7 +33,7 @@
     "args": {
       "snippet": "\\hat{$1}$0"
     }
-  },
+  },// snip：latex\hat
   {
     "key": "ctrl+u",
     "command": "editor.action.insertSnippet",
@@ -57,12 +41,12 @@
     "args": {
       "snippet": "^{$1}$0"
     }
-  },
+  },// snip：latex上标
   {
     "key": "ctrl+alt+u",
     "command": "latex-workshop.synctex",
     "when": "editorTextFocus && !config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId == 'latex'"
-  },
+  },// latex 正向搜索
   {
     "key": "ctrl+alt+j",
     "command": "-latex-workshop.synctex"
