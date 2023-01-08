@@ -6,26 +6,27 @@
     "code-runner.saveFileBeforeRun": true,
     "code-runner.saveAllFilesBeforeRun": true,
     "explorer.confirmDelete": false,
-    "editor.fontSize": 22,
+    "editor.fontSize": 22, //字体
     "editor.lineNumbers": "relative",
     "files.autoSave": "onFocusChange",
     "editor.tabCompletion": "on",
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "emmet.triggerExpansionOnTab": true,
-    "terminal.integrated.fontSize": 19,
+    "terminal.integrated.fontSize": 19, //终端字体大小
     "security.workspace.trust.untrustedFiles": "open",
     "editor.wordWrap": "on",
     "pasteImage.insertPattern": "\\begin{figure}[htbp]\n\t\\centering\n\t\\includegraphics[width=0.5\\textwidth]{figure/${imageSyntaxSuffix}${imageFileName}}\n\t\\caption{}\n\t\\label{Figure:}\n\\end{figure}",
     "pasteImage.path": "${projectRoot}/figure",
-    "latex-workshop.latex.autoBuild.run": "onSave",
+    //这部分开始是latex-workshop的配置
+    "latex-workshop.latex.autoBuild.run": "onSave", //保存时自动编译
     "latex-workshop.showContextMenu": true,
     "latex-workshop.intellisense.package.enabled": true,
-    "latex-workshop.message.error.show": false,
-    "latex-workshop.message.warning.show": false,
-    "latex-workshop.latex.recipe.default": "lastUsed",
-    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.message.error.show": false, //隐藏错误信息（不然每次报错都会弹出一个窗口
+    "latex-workshop.message.warning.show": false, //隐藏警告信息
+    "latex-workshop.latex.recipe.default": "lastUsed", 
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click", //设置反向搜索的方式为双击
     "latex-workshop.view.pdf.viewer": "tab",  
-    "latex-workshop.view.pdf.external.viewer.command": "C:/Users/1/AppData/Local/SumatraPDF/SumatraPDF.exe",  //请修改为自己的安装位置
+    "latex-workshop.view.pdf.external.viewer.command": "C:/Users/1/AppData/Local/SumatraPDF/SumatraPDF.exe",  //外部pdf预览器的设置，若不使用可直接删除
     "latex-workshop.view.pdf.external.viewer.args": [
         "-forward-search",
         "%TEX%",
@@ -34,9 +35,8 @@
         "-inverse-search",
         "code.cmd -r -g \"%f\":%l",
         "%PDF%"
-    ],
-    "latex-workshop.view.pdf.external.synctex.command": "C:/Users/1/AppData/Local/SumatraPDF/SumatraPDF.exe", //请修改为自己的安装位置
-    "latex-workshop.latex.autoClean.run": "onFailed", 
+    ], //外部预览器的设置
+    "latex-workshop.latex.autoClean.run": "onFailed", //编译失败自动清理下列文件
     "latex-workshop.latex.clean.fileTypes": [
       "*.aux",
       "*.bbl",
@@ -128,7 +128,8 @@
                 "pdflatex"
             ]
         }
-    ],
+    ], //工具链
+    //latex设置结束
     "tabnine.experimentalAutoImports": true,
     "c-cpp-compile-run.c-compiler": "C:\\msys64\\mingw64\\bin\\gcc.exe",
     "c-cpp-compile-run.cpp-compiler": "C:\\msys64\\mingw64\\bin\\g++",
