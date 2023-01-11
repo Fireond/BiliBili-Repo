@@ -8,4 +8,4 @@ VsCode中的设置与键盘映射文件在仓库中的[settings.json](settings.j
 
 ## 量子力学笔记
 
-[笔记](QM_Cohen_Notes.pdf)会不定期更新。
+[笔记](Quantume_Mechanics_Cohen.pdf)会不定期更新。
