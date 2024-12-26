@@ -8,12 +8,6 @@ TexLive2022[下载链接](https://mirrors.tuna.tsinghua.edu.cn/help/CTAN/)，具
 
 VsCode中的设置与键盘映射文件在仓库中的[settings.json](settings.json)与[keybindings.json](keybindings.json)，latex-Utility中snips的配置文件在[latexUtilsLiveSnippets.json](latexUtilsLiveSnippets.json)。
 
-## Neovim 配置
+## Neovim/Kitty 配置
 
-使用[LazyVim](https://www.lazyvim.org/)作为启动器
-
-[个人配置](https://github.com/Fireond/Neovim-config)(经常更新）其中含有 Luasnip 的相关片段。
-
-## kitty 配置
-
-[kitty](https://github.com/Fireond/Kitty-config)
+在[dotfiles/nvim](https://github.com/Fireond/dotfiles/tree/main/nvim/.config/nvim)与[dotfiles/kitty](https://github.com/Fireond/dotfiles/tree/main/kitty/.config/kitty)中。
